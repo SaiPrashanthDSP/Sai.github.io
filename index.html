@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sai Prashanth Reddy | Resume</title>
+  <title>Sai Prashanth Reddy | Portfolio</title>
   <style>
     body {
       margin: 0;
@@ -37,8 +37,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(to right, #0f172a, #1e293b);
       text-align: center;
+      background: linear-gradient(to right, #0f172a, #1e293b);
       padding: 2em;
     }
     h1 {
@@ -61,31 +61,32 @@
     }
     section {
       padding: 4em 2em;
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
     }
-    .skills-bar {
-      background: #334155;
-      border-radius: 8px;
-      margin: 0.5em 0;
-      overflow: hidden;
-    }
-    .skills-bar div {
-      height: 20px;
-      background-color: #38bdf8;
-      width: 0%;
-      animation: fillBar 2s ease forwards;
-    }
-    @keyframes fillBar {
-      to { width: var(--width); }
-    }
-    footer {
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 2em;
+      margin-top: 2em;
       text-align: center;
-      padding: 2em;
-      background: #1e293b;
-      color: #94a3b8;
     }
-    .resume-btn {
+    .skill-card {
+      background: #1e293b;
+      padding: 1em;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+    .skill-card img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 0.5em;
+      filter: invert(1);
+    }
+    .resume-btn, .learn-btn {
       margin-top: 1.5em;
       padding: 0.8em 1.5em;
       background-color: #38bdf8;
@@ -95,9 +96,17 @@
       border-radius: 8px;
       cursor: pointer;
       text-decoration: none;
+      display: inline-block;
+      margin-right: 1em;
     }
-    .resume-btn:hover {
+    .resume-btn:hover, .learn-btn:hover {
       background-color: #0ea5e9;
+    }
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #1e293b;
+      color: #94a3b8;
     }
     a {
       color: #38bdf8;
@@ -117,39 +126,50 @@
   <h1>Sai Prashanth Reddy Dyapa</h1>
   <div class="typing">Full-Stack Developer | AWS Certified | Spring Boot & Angular Expert</div>
   <a class="resume-btn" href="Sai_Prashanth_Reddy_Resume.pdf" download>📄 Download Resume</a>
+  <a class="learn-btn" href="https://github.com/SaiPrashanthDSP" target="_blank">🌐 Learn More About Me</a>
 </header>
 
 <section id="about">
   <h2>About Me</h2>
   <p>
-    Full-Stack Developer with 3+ years of experience in Java, Spring Boot, Angular, and RESTful APIs. Skilled in AWS, CI/CD, MySQL, and PostgreSQL. AWS Certified Solutions Architect – Associate. Passionate about clean architecture and data analytics using Python.
+    I'm a Full-Stack Developer with over 3 years of experience in designing, developing, and deploying enterprise-grade applications using Java, Spring Boot, Angular, and RESTful APIs. I have hands-on experience in cloud infrastructure (AWS), CI/CD pipelines, and DevOps automation. I'm currently pursuing my M.S. in Computer and Information Science and am passionate about crafting scalable, maintainable software and diving into data analytics using Python.
   </p>
 </section>
 
 <section id="skills">
   <h2>Skills</h2>
-  <label>Java, Spring Boot</label>
-  <div class="skills-bar"><div style="--width: 95%"></div></div>
-  <label>Angular, TypeScript</label>
-  <div class="skills-bar"><div style="--width: 90%"></div></div>
-  <label>CI/CD, Jenkins, Docker</label>
-  <div class="skills-bar"><div style="--width: 85%"></div></div>
-  <label>AWS, Lambda, EC2, S3</label>
-  <div class="skills-bar"><div style="--width: 80%"></div></div>
-  <label>PostgreSQL, MySQL</label>
-  <div class="skills-bar"><div style="--width: 85%"></div></div>
+  <div class="skills-grid">
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/java.svg"><p>Java</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/springboot.svg"><p>Spring Boot</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/angular.svg"><p>Angular</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg"><p>JavaScript</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/docker.svg"><p>Docker</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/aws.svg"><p>AWS</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/postgresql.svg"><p>PostgreSQL</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/git.svg"><p>Git</p></div>
+  </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
-  <p>
-    <strong>✔ Project Portfolio Management (PPM)</strong><br>
-    Spring Boot & Angular tracker app for Renault-Nissan used by 5000+ employees to monitor project status, costs, and quality.
-  </p>
-  <p>
-    <strong>✔ Covid Crisis Management (CCM)</strong><br>
-    Health monitoring platform for 200+ employees during COVID-19. Enabled real-time tracking and visual dashboards to improve crisis response.
-  </p>
+
+  <div style="margin-bottom: 2em;">
+    <h3 style="color:#38bdf8;">✔ Project Portfolio Management (PPM)</h3>
+    <p>
+      A comprehensive internal tool developed for Renault-Nissan to manage project lifecycles. Built using Spring Boot (REST API) and Angular (frontend), it serves over 5,000 global employees. Features include project tracking, cost-benefit analysis, timeline progress, and quality reporting. Integrated OAuth2 authentication, CI/CD pipelines using Jenkins & Docker, and PostgreSQL for scalable storage.
+      <br>
+      🔗 <a href="https://github.com/SaiPrashanthDSP/project-portfolio-management" target="_blank">View on GitHub</a>
+    </p>
+  </div>
+
+  <div>
+    <h3 style="color:#38bdf8;">✔ Covid Crisis Management (CCM)</h3>
+    <p>
+      A real-time health tracking system for employees during the COVID-19 pandemic. Developed using Angular and Spring Boot, this tool monitored health symptoms, tracked quarantines, and visualized data using dashboard charts. Reduced manual tracking and improved response time by 40%. Deployed on AWS EC2 with Dockerized setup and GitHub-based CI/CD.
+      <br>
+      🔗 <a href="https://github.com/SaiPrashanthDSP/covid-crisis-management" target="_blank">View on GitHub</a>
+    </p>
+  </div>
 </section>
 
 <section id="contact">
